@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DegenFrogz</title>
+    <audio id="myAudio">
+        <source src="23.mp3" type="audio/ogg">
+      </audio>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background-image: url(BG.webp); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            position: relative;
+            width: 600px; /* Adjust the size as needed */
+            height: 600px; /* Adjust the size as needed */
+        }
+        .button-container {
+            position: absolute;
+            top: 45%;
+            left: 45%;
+            transform: translate(-50%, -50%) rotate(0deg); /* Initial rotation */
+            width: 100%;
+            height: 100%;
+            animation: orbit 6s linear infinite; /* Adjust speed as needed */
+        }
+        @keyframes orbit {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg); /* Initial rotation */
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg); /* Full rotation */
+            }
+        }
+        .button {
+            width: 60px; /* Adjust button size as needed */
+            height: 60px; /* Adjust button size as needed */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            cursor: pointer;
+            position: absolute;
+        }
+        .telegram {
+            bottom: calc(50% - 250px); /* Half of container height */
+            left: calc(50% - 250px); /* Half of container width */
+        }
+        .twitter {
+            top: calc(50% - 250px); /* Half of container height */
+            right: calc(50% - 250px); /* Half of container width */
+        }
+        .pumpfun {
+            top: calc(50% - 250px); /* Half of container height */
+            left: calc(50% - 250px); /* Half of container width */
+        }
+        .sound {
+            bottom: calc(50% - 250px); /* Half of container height */
+            right: calc(50% - 250px); /* Half of container width */
+        }
+        .picture {
+            width: 500px; /* Adjust picture size as needed */
+            height: auto;
+            border-radius: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Ensure picture is above buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <a href="https://www.pumpfun.com/" target="_blank"><img class="button pumpfun" src="pump.webp" alt="PumpFun"></a>
+            <a href="https://t.me/" target="_blank"><img class="button telegram" src="telegram.webp" alt="Telegram"></a>
+            <a href="https://twitter.com/" target="_blank"><img class="button twitter" src="twitter.webp" alt="Twitter"></a>
+            <img class="button sound" src="SOUND.webp" alt="Sound" onclick="playAudio()">
+        </div>
+        <img class="picture" src="FRSGS.webp" alt="Center Picture">
+    </div>
+
+    <script>
+        var x = document.getElementById("myAudio"); 
+
+        function playAudio() { 
+         x.play(); 
+        } 
+    </script>
+</body>
+</html>
